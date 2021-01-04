@@ -3,7 +3,7 @@ Display the weather forecast for 5 days or the current weather
 
 # install
 ```
-npm install fiveday-weatherforecast
+npm install -g fiveday-weatherforecast
 ```
 
 # usage
