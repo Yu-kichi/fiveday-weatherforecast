@@ -1,0 +1,31 @@
+{
+  "name": "fiveday-weatherforecast",
+  "version": "1.0.0",
+  "description": "Display the weather forecast for 5 days or the current weather",
+  "main": "index.js",
+  "bin": {
+    "fiveday-weatherforecast": "index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yu-kichi/fiveday-weatherforecast.git"
+  },
+  "keywords": [
+    "weather",
+    "openweathermap",
+    "japan"
+  ],
+  "author": "Yu-kichi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Yu-kichi/fiveday-weatherforecast/issues"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "enquirer": "^2.3.6",
+    "request": "^2.88.2"
+  }
+}
