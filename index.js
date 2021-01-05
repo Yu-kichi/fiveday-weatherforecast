@@ -11,12 +11,9 @@ const weatherDescription = (data) => data.weather[0].description
 const humidity = (data) => data.main.humidity
 const temperature = (data) => data.main.temp.toFixed(1)
 const feelsLike = (data) => data.main.feels_like.toFixed(1)
+const displayInCommon = (data, time) => `${time.padEnd(5, ' ')} 気温:${temperature(data).padEnd(4, ' ')} 体感温度:${feelsLike(data).padEnd(5, ' ')} 湿度:${humidity(data)}% 天気:${weatherDescription(data).padEnd(5, '　')}`
 
-function displayInCommon (data, time) {
-  return `${time.padEnd(5, ' ')} 気温:${temperature(data).padEnd(4, ' ')} 体感温度:${feelsLike(data).padEnd(5, ' ')} 湿度:${humidity(data)}% 天気:${weatherDescription(data).padEnd(5, '　')}`
-}
-
-function fiveDayPerThreeHourForecast (location, key) {
+const fiveDayPerThreeHourForecast = (location, key) => {
   const URL = 'http://api.openweathermap.org/data/2.5/forecast?q=' + location + '&lang=ja&units=' + units + '&appid=' + key
 
   request(URL, function (error, response, body) {
@@ -47,8 +44,8 @@ function fiveDayPerThreeHourForecast (location, key) {
     }
   })
 }
-
-function currentWeatherData (location, key) {
+const currentWeatherData = (location, key) => {
+// function currentWeatherData (location, key) {
   const URLcurrent = 'http://api.openweathermap.org/data/2.5/weather?q=' + location + '&lang=ja&units=' + units + '&appid=' + key
 
   request(URLcurrent, function (error, response, body) {
@@ -71,8 +68,7 @@ function currentWeatherData (location, key) {
     }
   })
 }
-
-function setkey () {
+const setkey = () => {
   const prompt = new Input({
     name: 'key',
     message: 'Plase enter your OPEN WEATHER MAP API KEY.'
@@ -83,8 +79,7 @@ function setkey () {
       require('dotenv').config()
     })
 }
-
-function returnCity () {
+const returnCity = () => {
   const prompt = new Input({
     message: 'Plase enter the city you want to know the weather',
     initial: 'Tokyo'
@@ -92,8 +87,7 @@ function returnCity () {
   return prompt.run()
     .then(answer => answer)
 }
-
-function currentOrFiveDays () {
+const currentOrFiveDays = () => {
   const { Toggle } = require('enquirer')
   const prompt = new Toggle({
     message: 'Current or FiveDays?',

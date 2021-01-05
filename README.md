@@ -10,6 +10,7 @@ npm install -g fiveday-weatherforecast
 It is displayed every 3 hours for 5 days, for a total of 40 times.
 
 ```
+$ fiveday-weatherforecast
 ✔ Plase enter your OPEN WEATHER MAP API KEY.
 ✔ Plase enter the city you want to know the weather · niigata
 ✔ Current or FiveDays? · Current / >Five_days

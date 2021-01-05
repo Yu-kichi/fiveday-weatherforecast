@@ -1,6 +1,6 @@
 {
   "name": "fiveday-weatherforecast",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Display the weather forecast for 5 days or the current weather",
   "main": "index.js",
   "bin": {
